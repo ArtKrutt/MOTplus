@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "MOT+",
+  "version": "1.1",
+  "description": "MOT Extensions",
+  "permissions": [],
+  "icons": {
+    "16": "motlogo16.png",
+    "32": "motlogo32.png",
+    "48": "motlogo48.png",
+    "128": "motlogo128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mot-plus@artkrutt.addons.mozilla.org"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/nb-NO/instrumentbord-beboer/beboeraktiviteter/*"],
+      "js": ["aktiviteter_status.js"],
+      "run_at": "document_end",
+      "description": "Emoji Buttons for aktivitet status"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/nb-NO/instrumentbord-beboer/beboeraktiviteter/*"],
+      "js": ["aktiviteter_status_oncreate.js"],
+      "run_at": "document_end",
+      "description": "Emoji Buttons for aktivitet status on create"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/nb-NO/instrumentbord-beboer/beboeraktiviteter/*"],
+      "js": ["aktiviteter_bulk_presence.js"],
+      "run_at": "document_end",
+      "description": "Bulk Attendance Checker"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/nb-NO/instrumentbord-beboer/beboeraktiviteter/*"],
+      "js": ["aktiviteter_bulk_fravaer.js"],
+      "run_at": "document_end",
+      "description": "Bulk Gyldig Fravær"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/*"],
+      "js": ["click_to_copy.js"],
+      "run_at": "document_end",
+      "description": "Click to Copy"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/*"],
+      "js": ["beboeroversikt_fixes.js"],
+      "run_at": "document_end",
+      "description": "Beboeroversikt UI Fixes"
+    },
+    {
+      "matches": ["https://mot.microsoftcrmportals.com/*"],
+      "js": ["rowcount_fix.js"],
+      "run_at": "document_end",
+      "description": "Rowcount Fix (Prevents Repeat Table Reload)"
+    }
+  ]
+}
